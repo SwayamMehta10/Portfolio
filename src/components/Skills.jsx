@@ -1,22 +1,17 @@
+import { RiJavaFill, RiJavascriptFill, RiReactjsLine } from "react-icons/ri";
+import { FaPython, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
 import {
-	RiJavaFill,
-	FaPython,
-	RiJavascriptFill,
 	SiNextdotjs,
-	RiReactjsLine,
 	SiKotlin,
-	FaHtml5,
-	FaCss3Alt,
 	SiFlask,
-	TbSql,
 	SiCplusplus,
-	FcLinux,
-	FaGitAlt,
 	SiPrometheus,
 	SiGrafana,
 	SiKubernetes,
 	SiFalco,
-} from "react-icons/ri";
+} from "react-icons/si";
+import { TbSql } from "react-icons/tb";
+import { FcLinux } from "react-icons/fc";
 import Icon from "./Icon";
 import { motion } from "framer-motion";
 
