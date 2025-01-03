@@ -2,6 +2,7 @@ import einthovenPulseImage from "../assets/EinthovenPulse.png";
 import stockPulseImage from "../assets/StockPulse.png";
 import societyHUBImage from "../assets/SocietyHUB.png";
 import dashboardImage from "../assets/Social Media Dashboard.png";
+import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
 
 export const HERO_CONTENT =
 	"Welcome to my digital playground! I’m a software developer who thrives on transforming complex problems into elegant solutions. Whether I’m weaving together stunning web applications, crafting seamless mobile experiences, or diving into the fascinating world of AI and machine learning, my mission is to create technology that delights and empowers. With a knack for problem-solving and an insatiable curiosity, I approach each project as a new adventure, blending creativity and logic to build innovative solutions. When I’m not knee-deep in code, you can catch me kicking around a football, shooting hoops, or battling it out in FIFA. I’ve also dabbled in Shotokan Karate (I’ve got some shiny medals to prove it!) and led a dance crew to victory at a national competition. Basically, I’m all about balancing brainpower with some serious fun.";
@@ -19,6 +20,13 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
 	{
+		title: "SEO Rank Tracker",
+		image: seoRankTrackerImage,
+		description:
+			"A web app that enabled users to monitor Google search rankings for domains and keywords using SerpAPI, with interactive graphs displaying rank trends over time, enhancing SEO performance tracking. Implemented Google Auth for secure access and automated rank updates with a weekly cron job ensuring consistent and up-to-date insights with minimal manual effort.",
+		technologies: ["NextJS", "MongoDB", "TailwindCSS"],
+	},
+	{
 		title: "EinthovenPulse",
 		image: einthovenPulseImage,
 		description:
@@ -32,7 +40,6 @@ export const PROJECTS = [
 			"A comprehensive stock market tool for beginners, providing insights on over 1500 NSE-listed companies. Designed visualizations for 10+ technical indicators and integrated a Gemini-powered chatbot for real-time stock price queries and graph analysis Utilized Prophet, LSTM, GRU, GAN and WGAN-GP to provide accurate price forecasts (RMSE < 2) and generated VADER sentiment scores from latest news, enhancing users’ decision-making capabilities.",
 		technologies: ["Flask", "JavaScript", "Python"],
 	},
-
 	{
 		title: "SocietyHUB",
 		image: societyHUBImage,
