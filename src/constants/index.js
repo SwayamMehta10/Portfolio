@@ -13,7 +13,7 @@ export const EXPERIENCE = [
 		role: "Research Intern",
 		company: "Vellore Institute of Technology",
 		description:
-			"Enhanced stock price prediction accuracy by optimizing GAN-based models with additional market indices and technical indicators, lowering RMSE values by 40.21% compared to previous research. Developed a web application integrating real-time stock data, sentiment analysis, with Gemini-powered forecasting & chatbot, enabling users to make informed investment decisions with a user-friendly interface. Analyzed the impact of external events like COVID-19 on predictive models, demonstrating that traditional deep learning models (LSTM, GRU) outperformed GANs in highly volatile market conditions.",
+			"Enhanced stock price prediction accuracy by optimizing GAN-based models with additional market indices and technical indicators, lowering RMSE values by 40% compared to previous research. Developed a web application integrating real-time stock data, sentiment analysis, with Gemini-powered forecasting & chatbot, enabling users to make informed investment decisions with a user-friendly interface. Analyzed the impact of external events like COVID-19 on predictive models, demonstrating that traditional deep learning models (LSTM, GRU) outperformed GANs in highly volatile market conditions.",
 		technologies: ["Flask", "JavaScript", "Python", "GoogleGenerativeAI"],
 	},
 	{
