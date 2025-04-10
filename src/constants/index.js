@@ -1,5 +1,5 @@
 import einthovenPulseImage from "../assets/EinthovenPulse.png";
-import stockPulseImage from "../assets/StockPulse.png";
+import knowledgeGraphGenerator from "../assets/Knowledge Graph Generator.jpg";
 import societyHUBImage from "../assets/SocietyHUB.png";
 import dashboardImage from "../assets/Social Media Dashboard.png";
 import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
@@ -9,16 +9,31 @@ export const HERO_CONTENT =
 
 export const EXPERIENCE = [
 	{
+		year: "Jan 2024 - May 2024",
+		role: "Research Intern",
+		company: "Vellore Institute of Technology",
+		description:
+			"Enhanced stock price prediction accuracy by optimizing GAN-based models with additional market indices and technical indicators, lowering RMSE values by 40.21% compared to previous research. Developed a web application integrating real-time stock data, sentiment analysis, with Gemini-powered forecasting & chatbot, enabling users to make informed investment decisions with a user-friendly interface. Analyzed the impact of external events like COVID-19 on predictive models, demonstrating that traditional deep learning models (LSTM, GRU) outperformed GANs in highly volatile market conditions.",
+		technologies: ["Flask", "JavaScript", "Python", "GoogleGenerativeAI"],
+	},
+	{
 		year: "Jan 2023 - June 2023",
 		role: "CTY Intern",
 		company: "Hewlett Packard Enterprise",
 		description:
-			"Implemented the HPC Security Dashboard by integrating 5 modular tools to perform static code analysis, identify compliance issues, threats and vulnerabilities, and provide runtime security for Kubernetes clusters. Deployed Falco agents as pods to capture event metrics, combining Falco Exporter with Prometheus. Tested configuration across 6 distinct malicious system call scenarios to ensure robust threat detection and system monitoring. Set up the Falco dashboard in Grafana with custom visualizations for metadata and occurrence rates of 150+ events, priority alerts and most frequently violated rules.",
+			"Integrated 5 modular Kubernetes security tools to perform static code analysis, identify compliance issues, detect threats and vulnerabilities and ensure runtime security for Kubernetes clusters. Deployed Falco pods to capture event metrics, combining Falco Exporter with Prometheus, ensuring robust threat detection by simulating and mitigating 6 malicious system call scenarios. Configured a Falco dashboard in Grafana, featuring custom visualizations for most frequently violated rules, high-priority alerts, metadata and occurrence rates of 150+ events, thus improving real-time incident response.",
 		technologies: ["Kubernetes", "Falco", "Grafana", "Prometheus", "Linux"],
 	},
 ];
 
 export const PROJECTS = [
+	{
+		title: "Knowledge Graph Generator",
+		image: knowledgeGraphGenerator,
+		description:
+			"A comprehensive stock market tool for beginners, providing insights on over 1500 NSE-listed companies. Designed visualizations for 10+ technical indicators and integrated a Gemini-powered chatbot for real-time stock price queries and graph analysis Utilized Prophet, LSTM, GRU, GAN and WGAN-GP to provide accurate price forecasts (RMSE < 2) and generated VADER sentiment scores from latest news, enhancing users’ decision-making capabilities.",
+		technologies: ["Streamlit", "Flask", "JavaScript"],
+	},
 	{
 		title: "SEO Rank Tracker",
 		image: seoRankTrackerImage,
@@ -32,13 +47,6 @@ export const PROJECTS = [
 		description:
 			"A context-aware mHealth app to monitor heart rate through video analysis (CameraX API), respiratory rate via accelerometer data, and symptom severity, facilitating real-time health tracking within 45 seconds. Optimized app functionality with coroutines for asynchronous processing, boosting UI responsiveness and reducing risk of ANRs by keeping main thread unblocked. Implemented back handling and dynamic runtime permission requests, enhancing user trust and engagement by requesting permissions contextually.",
 		technologies: ["Kotlin", "Jetpack Compose", "RoomDB"],
-	},
-	{
-		title: "StockPulse",
-		image: stockPulseImage,
-		description:
-			"A comprehensive stock market tool for beginners, providing insights on over 1500 NSE-listed companies. Designed visualizations for 10+ technical indicators and integrated a Gemini-powered chatbot for real-time stock price queries and graph analysis Utilized Prophet, LSTM, GRU, GAN and WGAN-GP to provide accurate price forecasts (RMSE < 2) and generated VADER sentiment scores from latest news, enhancing users’ decision-making capabilities.",
-		technologies: ["Flask", "JavaScript", "Python"],
 	},
 	{
 		title: "SocietyHUB",
