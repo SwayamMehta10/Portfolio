@@ -4,6 +4,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { SpeedInsights } from "@vercel/speed-insights/vue"
 
 // rafce shortcut from ES7 extension
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
 			</div>
 
 			<div className="container mx-auto px-8">
+				<SpeedInsights />
 				<Navbar />
 				<Hero />
 				<Skills />
