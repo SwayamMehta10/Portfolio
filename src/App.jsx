@@ -4,7 +4,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import { SpeedInsights } from "@vercel/speed-insights/vue"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // rafce shortcut from ES7 extension
 const App = () => {
