@@ -3,6 +3,8 @@ import knowledgeGraphGenerator from "../assets/Knowledge Graph Generator.jpg";
 import societyHUBImage from "../assets/SocietyHUB.png";
 import dashboardImage from "../assets/Social Media Dashboard.png";
 import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
+import cmdPlay from "../assets/cmd Play.png";
+import ticTacToe from "../assets/TicTacToe.png";
 
 export const HERO_CONTENT =
 	"Welcome to my digital playground! I’m a software developer who thrives on transforming complex problems into elegant solutions. Whether I’m weaving together stunning web applications, crafting seamless mobile experiences, or diving into the fascinating world of AI and machine learning, my mission is to create technology that delights and empowers. With a knack for problem-solving and an insatiable curiosity, I approach each project as a new adventure, blending creativity and logic to build innovative solutions. When I’m not knee-deep in code, you can catch me kicking around a football, shooting hoops, or battling it out in FIFA. I’ve also dabbled in Shotokan Karate (I’ve got some shiny medals to prove it!) and led a dance crew to victory at a national competition. Basically, I’m all about balancing brainpower with some serious fun.";
@@ -28,10 +30,16 @@ export const EXPERIENCE = [
 
 export const PROJECTS = [
 	{
+		title: "cmd Play",
+		image: cmdPlay,
+		description: "Engineered and deployed a gamified educational platform within 24 hours to enhance middle-schoolers' understanding of basic programming, cybersecurity and SQL; awarded 1st place at Innovation Hacks'25. Scaled game logic and difficulty dynamically using custom state machines and AI-driven content generation (via Gemini); optimized cross-browser UX with <1s load time and implemented port-based parallel game hosting.",
+		technologies: ["ReactJS", "Vite", "TypeScript", "Shell"],
+	},
+	{
 		title: "Knowledge Graph Generator",
 		image: knowledgeGraphGenerator,
 		description:
-			"A comprehensive stock market tool for beginners, providing insights on over 1500 NSE-listed companies. Designed visualizations for 10+ technical indicators and integrated a Gemini-powered chatbot for real-time stock price queries and graph analysis Utilized Prophet, LSTM, GRU, GAN and WGAN-GP to provide accurate price forecasts (RMSE < 2) and generated VADER sentiment scores from latest news, enhancing users’ decision-making capabilities.",
+			"Developed a tool that extracts and visualizes relationships from articles, newspapers, and research papers using Google Generative AI and NetworkX, enhancing text comprehension through interactive graphs. Built a web application and browser extension, enabling users to generate and download knowledge graphs directly from webpages for seamless real-time analysis.",
 		technologies: ["Streamlit", "Flask", "JavaScript"],
 	},
 	{
@@ -42,10 +50,16 @@ export const PROJECTS = [
 		technologies: ["NextJS", "MongoDB", "TailwindCSS"],
 	},
 	{
+		title: "Tic Tac Toe",
+		image: ticTacToe,
+		description: "Implemented a Tic-Tac-Toe AI using the Minimax algorithm with alpha-beta pruning, achieving efficient decision-making and enhanced user engagement with adaptable difficulty levels (Easy, Medium, Hard). Developed a real-time multiplayer mode utilizing Bluetooth connectivity with JSON-based state synchronization, ensuring low-latency gameplay and robust connection management for a competitive experience.",
+		technologies: ["Kotlin", "Python", "Jetpack Compose", "RealmDB"],
+	},
+	{
 		title: "EinthovenPulse",
 		image: einthovenPulseImage,
 		description:
-			"A context-aware mHealth app to monitor heart rate through video analysis (CameraX API), respiratory rate via accelerometer data, and symptom severity, facilitating real-time health tracking within 45 seconds. Optimized app functionality with coroutines for asynchronous processing, boosting UI responsiveness and reducing risk of ANRs by keeping main thread unblocked. Implemented back handling and dynamic runtime permission requests, enhancing user trust and engagement by requesting permissions contextually.",
+			"Developed a context-aware app to monitor heart rate through video analysis (CameraX), respiratory rate via accelerometer data, and symptom severity, facilitating real-time health tracking within 45 seconds. Optimized app functionality with coroutines for asynchronous processing, boosting UI responsiveness and reducing risk of ANRs by keeping main thread unblocked. Implemented back handling and dynamic runtime permission requests, enhancing user trust and engagement by requesting permissions contextually.",
 		technologies: ["Kotlin", "Jetpack Compose", "RoomDB"],
 	},
 	{
