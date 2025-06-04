@@ -41,7 +41,7 @@ const Projects = () => {
 							</h6>
 							<ul className="list-disc list-inside mb-4 text-neutral-400">
 								{project.description
-									.split(".")
+									.split(/\. (?=[A-Z])/)	
 									.map((sentence) => sentence.trim())
 									.filter((sentence) => sentence)
 									.map((sentence, sentenceIndex) => (

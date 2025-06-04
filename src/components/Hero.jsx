@@ -44,8 +44,8 @@ const Hero = () => {
 							{HERO_CONTENT}
 						</motion.p>
 						<motion.a
-							href="/Swayam_Mehta_Resume.pdf"
-							download="Swayam_Mehta_Resume.pdf"
+							href="/Swayam_Mehta_SWE_Resume.pdf"
+							download="Swayam_Mehta_SWE_Resume.pdf"
 							variants={container(1.5)}
 							initial="hidden"
 							animate="visible"

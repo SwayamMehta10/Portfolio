@@ -1,7 +1,5 @@
 import einthovenPulseImage from "../assets/EinthovenPulse.png";
 import knowledgeGraphGenerator from "../assets/Knowledge Graph Generator.jpg";
-import societyHUBImage from "../assets/SocietyHUB.png";
-import dashboardImage from "../assets/Social Media Dashboard.png";
 import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
 import cmdPlay from "../assets/cmd Play.png";
 import ticTacToe from "../assets/TicTacToe.png";
@@ -29,6 +27,18 @@ export const EXPERIENCE = [
 ];
 
 export const PROJECTS = [
+	{
+		title: "LLM-Assisted FMEA in SMT",
+		image: null,
+		description: "Built a Retrieval-Augmented Generation (RAG) pipeline using Gemini 2.0 Flash and real semiconductor manufacturing (Surface Mount Technology, SMT) data to auto-generate Failure Mode and Effects Analysis (FMEA) tables, achieving 0.78–0.93 semantic similarity and 90%+ field coverage, exceeding GPT-4 academic benchmarks, and reducing manual effort by 80%+. Integrated dense retrieval (bge-small-en embeddings) with BM25 hybrid search to ground LLM outputs in IPC/JEDEC standards, boosting BLEU/ROUGE scores by 15–20% vs baseline LLMs and enabling production-ready FMEA generation with context attribution and minimal expert edits.",
+		technologies: ["Python", "Langchain", "HuggingFace", "ChromaDB"],
+	},
+	{
+		title: "RepoMatcher",
+		image: null,
+		description: "Architected a knowledge graph-enhanced recommendation system for GitHub repositories, integrating TransE/ RotatE embeddings with neural collaborative filtering to deliver explainable, diverse suggestions; achieved HR@10 of 34%, NDCG@10 of 21%, and MRR of 26%, on par with leading KG recommender benchmarks. Designed and implemented a scalable end-to-end pipeline in PyTorch and PyKEEN, processing 41+ GitHub metadata features (GHTorrent) into relational triples and training a KG-augmented model that outperformed traditional collaborative filtering baselines by over 20% in top-10 ranking accuracy.",
+		technologies: ["Python", "Google BigQuery"],
+	},
 	{
 		title: "cmd Play",
 		image: cmdPlay,
@@ -61,21 +71,6 @@ export const PROJECTS = [
 		description:
 			"Developed a context-aware app to monitor heart rate through video analysis (CameraX), respiratory rate via accelerometer data, and symptom severity, facilitating real-time health tracking within 45 seconds. Optimized app functionality with coroutines for asynchronous processing, boosting UI responsiveness and reducing risk of ANRs by keeping main thread unblocked. Implemented back handling and dynamic runtime permission requests, enhancing user trust and engagement by requesting permissions contextually.",
 		technologies: ["Kotlin", "Jetpack Compose", "RoomDB"],
-	},
-	{
-		title: "SocietyHUB",
-		image: societyHUBImage,
-		description:
-			" A management tool for societies to maintain resident lists, register complaints, post notices, and share images. Features distinct interfaces and access levels for users and admins, with implemented security measures to protect against Clickjacking, SQL Injection, and Cross-Site Scripting.",
-		technologies: ["PHP", "MySQL"],
-	},
-
-	{
-		title: "Social Media Dashboard",
-		image: dashboardImage,
-		description:
-			"A responsive social media dashboard with a light/dark theme switcher that displays static data for follower counts, daily changes, and engagement metrics across platforms like Facebook, Twitter, Instagram, and YouTube, with a clean, intuitive user interface. Built as a frontend-only project, it delivers seamless theme transitions and a visually engaging layout.",
-		technologies: ["HTML", "CSS", "SCSS", "JavaScript"],
 	},
 ];
 
