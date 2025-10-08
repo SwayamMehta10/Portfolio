@@ -3,7 +3,7 @@ import knowledgeGraphGenerator from "../assets/Knowledge Graph Generator.jpg";
 import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
 import cmdPlay from "../assets/cmd Play.png";
 import ticTacToe from "../assets/TicTacToe.png";
-import llm from "../assets/llm-assisted-fmea.png";
+import llm from "../assets/rag.png";
 import quizzi from "../assets/quizzi.png";
 
 export const HERO_CONTENT =
