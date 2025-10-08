@@ -5,6 +5,7 @@ import cmdPlay from "../assets/cmd Play.png";
 import ticTacToe from "../assets/TicTacToe.png";
 import llm from "../assets/rag.png";
 import quizzi from "../assets/quizzi.png";
+import donna from "../assets/donna.png";
 
 export const HERO_CONTENT =
 	"Welcome to my digital playground! I’m a software developer who thrives on transforming complex problems into elegant solutions. Whether I’m weaving together stunning web applications, crafting seamless mobile experiences, or diving into the fascinating world of AI and machine learning, my mission is to create technology that delights and empowers. With a knack for problem-solving and an insatiable curiosity, I approach each project as a new adventure, blending creativity and logic to build innovative solutions. When I’m not knee-deep in code, you can catch me kicking around a football, shooting hoops, or battling it out in FIFA. I’ve also dabbled in Shotokan Karate (I’ve got some shiny medals to prove it!) and led a dance crew to victory at a national competition. Basically, I’m all about balancing brainpower with some serious fun.";
@@ -31,7 +32,7 @@ export const EXPERIENCE = [
 export const PROJECTS = [
 	{
 		title: "Donna",
-		image: null,
+		image: donna,
 		description: "Built a multilingual AI voice agent capable of accessing Gmail, Calendar, Slack and Zoom to autonomously manage schedules, deliver reminders via phone calls, and place calls on users’ behalf using real-time speech synthesis and Twilio APIs; developed in 24 hours at Sunhacks’25.",
 		technologies: ["FastAPI", "LangGraph", "Twilio", "Livekit", "Groq"],
 	},
