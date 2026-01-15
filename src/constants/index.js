@@ -88,9 +88,3 @@ export const PROJECTS = [
 		technologies: ["Kotlin", "Jetpack Compose", "RoomDB"],
 	},
 ];
-
-export const CONTACT = {
-	address: "Tempe, AZ",
-	email: "swayam10.mht@gmail.com",
-	contact: "+1 (602)596-3147",
-};
