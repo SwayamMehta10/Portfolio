@@ -17,10 +17,6 @@ const Footer = () => {
 		const formData = new FormData(event.target);
 		formData.append("access_key", ACCESS_KEY);
 		formData.append("from_name", "Portfolio Contact Form");
-		formData.append(
-			"subject",
-			`Portfolio · ${formData.get("subject") || "New message"}`,
-		);
 
 		try {
 			const res = await fetch("https://api.web3forms.com/submit", {
