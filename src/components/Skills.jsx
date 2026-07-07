@@ -1,64 +1,41 @@
-import { RiJavaFill, RiJavascriptFill, RiReactjsLine } from "react-icons/ri";
-import { FaPython, FaHtml5, FaCss3Alt, FaGitAlt } from "react-icons/fa";
-import {
-	SiNextdotjs,
-	SiKotlin,
-	SiFlask,
-	SiCplusplus,
-	SiPrometheus,
-	SiGrafana,
-	SiKubernetes,
-	SiFalco,
-} from "react-icons/si";
-import { TbSql } from "react-icons/tb";
-import { FcLinux } from "react-icons/fc";
-import Icon from "./Icon";
 import { motion } from "framer-motion";
+import { SKILL_GROUPS } from "../constants";
+import { ResolvedIcon } from "./icons";
+import Section from "./Section";
 
 const Skills = () => {
 	return (
-		<div className="border-b border-neutral-800 pb-12">
-			<motion.h2
-				whileInView={{ opacity: 1, y: 0 }}
-				initial={{ opacity: 0, y: -100 }}
-				transition={{ duration: 1.5 }}
-				className="my-20 text-center text-4xl"
-			>
-				Skills
-			</motion.h2>
-			<motion.div
-				whileInView={{ opacity: 1, x: 0 }}
-				initial={{ opacity: 0, x: -100 }}
-				transition={{ duration: 1.5 }}
-				className="flex flex-wrap items-center justify-center gap-6 mx-10"
-			>
-				<Icon icon={FaHtml5} duration={5.5} color="text-red-600" />
-				<Icon icon={FaCss3Alt} duration={1.5} color="text-blue-600" />
-				<Icon
-					icon={RiJavascriptFill}
-					duration={3}
-					color="text-yellow-400"
-				/>
-				<Icon icon={RiReactjsLine} duration={1} color="text-cyan-400" />
-				<Icon icon={SiNextdotjs} duration={4} />
-				<Icon icon={RiJavaFill} duration={2} color="text-red-600" />
-				<Icon icon={SiKotlin} duration={3} color="text-purple-600" />
-				<Icon icon={FaPython} duration={6} color="text-blue-400" />
-				<Icon icon={SiFlask} duration={3.5} />
-				<Icon icon={TbSql} duration={5.5} color="text-orange-600" />
-				<Icon
-					icon={SiCplusplus}
-					duration={1.5}
-					color="text-indigo-600"
-				/>
-				<Icon icon={FcLinux} duration={5} />
-				<Icon icon={FaGitAlt} duration={2.5} color="text-red-600" />
-				<Icon icon={SiKubernetes} duration={6} color="text-blue-600" />
-				<Icon icon={SiPrometheus} duration={1.5} color="text-red-600" />
-				<Icon icon={SiGrafana} duration={4} color="text-orange-600" />
-				<Icon icon={SiFalco} duration={2.5} color="text-sky-400" />
-			</motion.div>
-		</div>
+		<Section id="skills" eyebrow="What I work with" title="Skills">
+			<div className="grid gap-6 sm:grid-cols-2">
+				{SKILL_GROUPS.map((group, gi) => (
+					<motion.div
+						key={group.label}
+						initial={{ opacity: 0, y: 16 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-60px" }}
+						transition={{ duration: 0.5, delay: gi * 0.08 }}
+						className="rounded-2xl border border-white/10 bg-ink-900/60 p-6"
+					>
+						<p className="eyebrow mb-4 text-neutral-400">{group.label}</p>
+						<ul className="flex flex-wrap gap-2.5">
+							{group.items.map((item) => (
+								<li
+									key={item.name}
+									className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-neutral-100 transition hover:border-accent/40 hover:text-white"
+								>
+									<ResolvedIcon
+										name={item.icon}
+										className="text-base text-accent"
+									/>
+									{item.name}
+								</li>
+							))}
+						</ul>
+					</motion.div>
+				))}
+			</div>
+		</Section>
 	);
 };
+
 export default Skills;

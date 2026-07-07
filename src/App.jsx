@@ -1,27 +1,31 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import Footer from "./components/Footer";
 
-// rafce shortcut from ES7 extension
 const App = () => {
 	return (
-		<div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
-			<div className="fixed top-0 -z-10 h-full w-full">
-				<div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<div className="min-h-screen overflow-x-hidden bg-ink-950 text-neutral-300 antialiased selection:bg-accent/30 selection:text-white">
+			{/* ambient background glow */}
+			<div className="pointer-events-none fixed inset-0 -z-10">
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_-10%,rgb(var(--accent)/0.12),transparent)]" />
 			</div>
 
-			<div className="container mx-auto px-8">
-				<SpeedInsights />
-				<Navbar />
+			<SpeedInsights />
+			<Navbar />
+
+			<main className="mx-auto max-w-5xl px-6">
 				<Hero />
 				<Skills />
 				<Experience />
 				<Projects />
-			</div>
+				<Footer />
+			</main>
 		</div>
 	);
 };
+
 export default App;

@@ -1,69 +1,65 @@
-import { EXPERIENCE } from "../constants";
 import { motion } from "framer-motion";
+import { EXPERIENCE } from "../constants";
+import Section from "./Section";
 
 const Experience = () => {
 	return (
-		<div className="border-b border-neutral-900 pb-4">
-			<motion.h1
-				whileInView={{ opacity: 1, y: 0 }}
-				initial={{ opacity: 0, y: -100 }}
-				transition={{ duration: 0.5 }}
-				className="my-20 text-center text-4xl"
-			>
-				Experience
-			</motion.h1>
-			<div>
-				{EXPERIENCE.map((experience, index) => (
-					<div
-						key={index}
-						className="mb-8 flex flex-wrap lg:justify-center"
-					>
-						<motion.div
-							whileInView={{ opacity: 1, x: 0 }}
-							initial={{ opacity: 0, x: -100 }}
-							transition={{ duration: 1 }}
-							className="w-full lg:w-1/4"
-						>
-							<p className="mb-2 text-sm text-neutral-400">
-								{experience.year}
-							</p>
-						</motion.div>
-						<motion.div
-							whileInView={{ opacity: 1, x: 0 }}
-							initial={{ opacity: 0, x: 100 }}
-							transition={{ duration: 1 }}
-							className="w-full max-w-xl lg:w-3/4"
-						>
-							<h6 className="mb-2 font-semibold">
-								{experience.role} -{" "}
-								<span className="text-sm text-purple-100">
-									{experience.company}
-								</span>
-							</h6>
+		<Section id="experience" eyebrow="Where I've worked" title="Experience">
+			<div className="relative">
+				{/* timeline spine */}
+				<div className="absolute left-[7px] top-2 bottom-2 hidden w-px bg-white/10 md:block" />
 
-							<ul className="list-disc list-inside mb-4 text-neutral-400">
-								{experience.description
-									.split(".")
-									.map((sentence) => sentence.trim())
-									.filter((sentence) => sentence)
-									.map((sentence, sentenceIndex) => (
-										<li key={sentenceIndex}>{sentence}.</li>
-									))}
+				<div className="space-y-12">
+					{EXPERIENCE.map((exp, i) => (
+						<motion.div
+							key={exp.company}
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-80px" }}
+							transition={{ duration: 0.5, delay: i * 0.05 }}
+							className="relative md:pl-10"
+						>
+							{/* node */}
+							<span className="absolute left-0 top-2 hidden h-3.5 w-3.5 rounded-full border-2 border-accent bg-ink-950 md:block" />
+
+							<div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+								<h3 className="text-lg font-semibold text-white">
+									{exp.role}
+									<span className="text-accent"> · {exp.company}</span>
+								</h3>
+								<p className="font-mono text-xs text-neutral-400">
+									{exp.year}
+								</p>
+							</div>
+
+							<ul className="mt-4 space-y-2.5">
+								{exp.points.map((point, pi) => (
+									<li
+										key={pi}
+										className="flex gap-3 text-sm leading-relaxed text-neutral-300"
+									>
+										<span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-accent/60" />
+										{point}
+									</li>
+								))}
 							</ul>
 
-							{experience.technologies.map((tech, index) => (
-								<span
-									key={index}
-									className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
-								>
-									{tech}
-								</span>
-							))}
+							<div className="mt-4 flex flex-wrap gap-2">
+								{exp.technologies.map((tech) => (
+									<span
+										key={tech}
+										className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-xs text-neutral-300"
+									>
+										{tech}
+									</span>
+								))}
+							</div>
 						</motion.div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
-		</div>
+		</Section>
 	);
 };
+
 export default Experience;

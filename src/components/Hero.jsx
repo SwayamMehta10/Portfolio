@@ -1,79 +1,107 @@
-import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/Profile_Pic.png";
 import { motion } from "framer-motion";
-import Button from "@mui/material/Button";
-import { FaDownload } from "react-icons/fa6";
+import { FiArrowDownRight, FiArrowRight } from "react-icons/fi";
+import { HERO } from "../constants";
+import profilePic from "../assets/Profile_Pic.jpg";
 
-const container = (delay) => ({
-	hidden: { x: -100, opacity: 0 },
-	visible: {
-		x: 0,
-		opacity: 1,
-		transition: { duration: 0.5, delay: delay },
-	},
+const fadeUp = (delay = 0) => ({
+	hidden: { opacity: 0, y: 18 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay } },
 });
 
 const Hero = () => {
 	return (
-		<div className="border-b border-neutral-900 pb-4 lg:mb-35">
-			<div className="flex flex-wrap">
-				<div className="w-full lg:w-1/2">
-					<div className="flex flex-col items-center lg:items-start">
-						<motion.h1
-							variants={container(0)}
-							initial="hidden"
-							animate="visible"
-							className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+		<section id="home" className="pt-28 md:pt-36">
+			<div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
+				{/* Left: identity */}
+				<div>
+					<motion.p
+						variants={fadeUp(0)}
+						initial="hidden"
+						animate="visible"
+						className="eyebrow text-accent"
+					>
+						{HERO.roles.join("  ·  ")}
+					</motion.p>
+
+					<motion.h1
+						variants={fadeUp(0.08)}
+						initial="hidden"
+						animate="visible"
+						className="mt-5 text-5xl font-semibold tracking-tight text-white md:text-7xl"
+					>
+						{HERO.name}
+					</motion.h1>
+
+					<motion.p
+						variants={fadeUp(0.16)}
+						initial="hidden"
+						animate="visible"
+						className="mt-5 max-w-xl text-lg text-neutral-300 md:text-xl"
+					>
+						{HERO.tagline}
+					</motion.p>
+
+					<motion.p
+						variants={fadeUp(0.24)}
+						initial="hidden"
+						animate="visible"
+						className="mt-6 max-w-xl leading-relaxed text-neutral-300"
+					>
+						{HERO.bio}
+					</motion.p>
+
+					<motion.div
+						variants={fadeUp(0.32)}
+						initial="hidden"
+						animate="visible"
+						className="mt-9 flex flex-wrap items-center gap-4"
+					>
+						<a
+							href={HERO.resumeHref}
+							download
+							className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-ink-950 transition hover:shadow-glow"
 						>
-							Swayam Mehta
-						</motion.h1>
-						<motion.span
-							variants={container(0.5)}
-							initial="hidden"
-							animate="visible"
-							className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
+							Download résumé
+							<FiArrowDownRight className="transition group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+						</a>
+						<a
+							href="#projects"
+							className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-neutral-200 transition hover:border-accent hover:text-accent"
 						>
-							Software Developer
-						</motion.span>
-						<motion.p
-							variants={container(1)}
-							initial="hidden"
-							animate="visible"
-							className="my-2 max-w-xl py-6 font-light tracking-tighter"
-						>
-							{HERO_CONTENT}
-						</motion.p>
-						<motion.a
-							href="/Swayam_Mehta_SWE_Resume.pdf"
-							download="Swayam_Mehta_SWE_Resume.pdf"
-							variants={container(1.5)}
-							initial="hidden"
-							animate="visible"
-							className="my-2 max-w-xl pb-6 font-light tracking-tighter"
-						>
-							<Button
-								variant="contained"
-								endIcon={<FaDownload />}
-							>
-								Resume
-							</Button>
-						</motion.a>
-					</div>
+							View work
+							<FiArrowRight className="transition group-hover:translate-x-0.5" />
+						</a>
+					</motion.div>
+
+					<motion.p
+						variants={fadeUp(0.4)}
+						initial="hidden"
+						animate="visible"
+						className="mt-6 font-mono text-xs text-neutral-400"
+					>
+						{HERO.location}
+					</motion.p>
 				</div>
-				<div className="w-full lg:w-1/2 lg:p-8">
-					<div className="flex justify-center">
-						<motion.img
-							initial={{ x: 100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 1, delay: 1.2 }}
+
+				{/* Right: portrait */}
+				<motion.div
+					initial={{ opacity: 0, scale: 0.96 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.7, delay: 0.2 }}
+					className="mx-auto w-full max-w-xs md:max-w-sm"
+				>
+					<div className="relative">
+						<div className="absolute -inset-4 -z-10 rounded-full bg-accent/10 blur-2xl" />
+						<img
 							src={profilePic}
-							alt="Profile Pic"
-							className="rounded-full"
+							alt="Swayam Mehta"
+							className="aspect-square w-full rounded-full border border-white/10 object-cover"
 						/>
 					</div>
-				</div>
+				</motion.div>
 			</div>
-		</div>
+		</section>
 	);
 };
+
 export default Hero;

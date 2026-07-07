@@ -1,90 +1,250 @@
-import einthovenPulseImage from "../assets/EinthovenPulse.png";
-import knowledgeGraphGenerator from "../assets/Knowledge Graph Generator.jpg";
-import seoRankTrackerImage from "../assets/SEO Rank Tracker.png";
-import cmdPlay from "../assets/cmd Play.png";
-import ticTacToe from "../assets/TicTacToe.png";
-import llm from "../assets/rag.png";
-import quizzi from "../assets/quizzi.png";
-import donna from "../assets/donna.png";
-
-export const HERO_CONTENT =
-	"Welcome to my digital playground! I’m a software developer who thrives on transforming complex problems into elegant solutions. Whether I’m weaving together stunning web applications, crafting seamless mobile experiences, or diving into the fascinating world of AI and machine learning, my mission is to create technology that delights and empowers. With a knack for problem-solving and an insatiable curiosity, I approach each project as a new adventure, blending creativity and logic to build innovative solutions. When I’m not knee-deep in code, you can catch me kicking around a football, shooting hoops, or battling it out in FIFA. I’ve also dabbled in Shotokan Karate (I’ve got some shiny medals to prove it!) and led a dance crew to victory at a national competition. Basically, I’m all about balancing brainpower with some serious fun.";
+export const HERO = {
+	name: "Swayam Mehta",
+	roles: ["Software Engineer", "AI/ML Engineer"],
+	tagline: "I build software systems, and the AI that runs inside them.",
+	bio: 'I work across the stack — resilient backends, real-time pipelines, and applied ML — most recently as an ML Engineer at JobTalk AI, with earlier work at Hewlett Packard Enterprise. I like the part where a system goes from "working in theory" to actually holding up under real traffic and real edge cases, that\'s usually where I end up spending my nights. Currently on OPT and open to full-time Software and AI/ML Engineering roles.',
+	resumeHref: "/Swayam_Mehta_SWE_Resume.pdf",
+	altResumeHref: "/Swayam_Mehta_AI-ML_Resume.pdf",
+	location: "United States · Open to relocation",
+};
 
 export const EXPERIENCE = [
 	{
-		year: "Jan 2024 - May 2024",
-		role: "Research Intern",
-		company: "Vellore Institute of Technology",
-		description:
-			"Enhanced stock price prediction accuracy by optimizing GAN-based models with additional market indices and technical indicators, lowering RMSE values by 40% compared to previous research. Developed a web application integrating real-time stock data, sentiment analysis, with Gemini-powered forecasting & chatbot, enabling users to make informed investment decisions with a user-friendly interface. Analyzed the impact of external events like COVID-19 on predictive models, demonstrating that traditional deep learning models (LSTM, GRU) outperformed GANs in highly volatile market conditions.",
-		technologies: ["Flask", "JavaScript", "Python", "GoogleGenerativeAI"],
+		year: "Mar 2026 — May 2026",
+		role: "Machine Learning Engineer Intern",
+		company: "JobTalk AI",
+		points: [
+			"Built an async multi-format resume ingestion service (FastAPI, Celery, MinIO/S3) with a 3-tier parallel extraction pipeline, AES-128 PII-at-rest encryption, and row-level tenant isolation for a multi-client SaaS deployment.",
+			"Diagnosed and fixed a Celery/asyncpg connection-pool exhaustion bug failing resumes under load, lifting end-to-end success to 99%+; shipped Prometheus + Grafana monitoring across 19 panels tracking throughput and p50/p95/p99 latency.",
+			"Cut LLM inference cost by 73% and eliminated extraction timeouts by consolidating 5 prompts into a single schema call and self-hosting a quantized Qwen3-8B via vLLM, keeping candidate PII off third-party APIs.",
+		],
+		technologies: [
+			"FastAPI",
+			"Celery",
+			"asyncpg",
+			"vLLM",
+			"spaCy",
+			"Prometheus",
+		],
 	},
 	{
-		year: "Jan 2023 - June 2023",
-		role: "CTY Intern",
+		year: "Jan 2024 — May 2024",
+		role: "Research Assistant",
+		company: "Vellore Institute of Technology",
+		points: [
+			"Improved a stock-price forecasting pipeline (Bi-LSTM, GRU, GAN) by incorporating market indices and technical indicators, reducing RMSE by 40% over prior research baselines.",
+			"Delivered forecasts and VADER sentiment scores through a Flask REST API with a Gemini Vision chart-analysis chatbot.",
+		],
+		technologies: ["PyTorch", "GANs", "Flask", "Python", "Gemini"],
+	},
+	{
+		year: "Jan 2023 — Jun 2023",
+		role: "CTY Intern — High Performance Computing",
 		company: "Hewlett Packard Enterprise",
-		description:
-			"Integrated 5 modular Kubernetes security tools to perform static code analysis, identify compliance issues, detect threats and vulnerabilities and ensure runtime security for Kubernetes clusters. Deployed Falco pods to capture event metrics, combining Falco Exporter with Prometheus, ensuring robust threat detection by simulating and mitigating 6 malicious system call scenarios. Configured a Falco dashboard in Grafana, featuring custom visualizations for most frequently violated rules, high-priority alerts, metadata and occurrence rates of 150+ events, thus improving real-time incident response.",
-		technologies: ["Kubernetes", "Falco", "Grafana", "Prometheus", "Linux"],
+		points: [
+			"Engineered Kubernetes runtime security using Falco with eBPF probes to detect container escapes, privilege escalation, and filesystem tampering; streamed alerts via Falco Exporter over gRPC into Prometheus/Grafana with Slack/Discord notifications.",
+			"Increased security coverage ~30% and cut incident detection latency ~40% in attack simulations by replacing manual log review with automated rule-based behavioral alerts.",
+		],
+		technologies: [
+			"Kubernetes",
+			"Falco",
+			"eBPF",
+			"gRPC",
+			"Grafana",
+			"Prometheus",
+		],
 	},
 ];
 
+// Projects — ordered strongest/most-recent first. No images by design;
+// the `metric` field is the visual hook per card.
 export const PROJECTS = [
 	{
+		title: "ClickLess AI",
+		period: "Spring 2026",
+		metric: "NDCG@5 0.58 → 0.77",
+		summary:
+			"A grocery-shopping agent that turns a natural-language request into a ranked, dietary-aware cart. A Mistral 7B extraction pipeline over Open Food Facts builds a Neo4j knowledge graph (8,146 products, 43,216 edges); a weighted ensemble ranker combines Apriori co-purchase rules with KG constraint scoring.",
+		technologies: [
+			"Python",
+			"LangGraph",
+			"Mistral 7B",
+			"Neo4j",
+			"GraphRAG",
+			"Ollama",
+		],
+		github: "",
+	},
+	{
 		title: "Donna",
-		image: donna,
-		description: "Built a multilingual AI voice agent capable of accessing Gmail, Calendar, Slack and Zoom to autonomously manage schedules, deliver reminders via phone calls, and place calls on users’ behalf using real-time speech synthesis and Twilio APIs; developed in 24 hours at Sunhacks’25.",
-		technologies: ["FastAPI", "LangGraph", "Twilio", "Livekit", "Groq"],
+		period: "Sunhacks '25",
+		metric: "Real-time voice · built in 24h",
+		summary:
+			"A multilingual AI voice agent that handles live phone calls — accessing Gmail, Calendar, Slack, and Zoom to manage schedules and place calls on the user's behalf. Full real-time pipeline: SIP telephony over Twilio, WebRTC audio via LiveKit, and a LangGraph agent holding low-latency conversations.",
+		technologies: ["FastAPI", "LangGraph", "Twilio", "LiveKit", "Groq"],
+		github: "",
+	},
+	{
+		title: "Industrial Ops Monitor",
+		period: "Spring 2026",
+		metric: "Predicted failure 35 days early",
+		summary:
+			"A full-stack equipment-intelligence platform over 3M real sensor readings across 96 assets. A 3-pass anomaly engine (median deviation, threshold breach, linear-regression trend projection) drives SSE-streamed Gemini briefings and an automated work-order lifecycle — validated on a real bearing failure 35 days before it occurred.",
+		technologies: [
+			"Python",
+			"FastAPI",
+			"React",
+			"TypeScript",
+			"Gemini",
+			"SSE",
+		],
+		github: "",
 	},
 	{
 		title: "Quizzi",
-		image: quizzi,
-		description: "Developed a full-stack multiplayer trivia platform with social features, optimized for performance, security, and scalability. Reduced database egress by 70% and eliminated 228s of query latency by implementing Redis-style caching, request batching, and client-side data assembly. Hardened API infrastructure with server-side validation, rate limiting, and middleware-based request handling. Reduced session-based authentication calls from 6,187 to 50 via caching and access control mechanisms.",
-		technologies: ["NextJS", "TypeScript", "Supabase", "D3.js", "TailwindCSS"],
+		period: "Summer 2025",
+		metric: "76% less DB egress · 10–100× queries",
+		summary:
+			"A full-stack multiplayer trivia platform. Reworked an indexed PostgreSQL schema with row-level security to cut policy evaluation from O(N) to O(1), and decomposed heavy LATERAL JOINs into primary-key queries with TTL caching and debounced batching to collapse N+1 fetches.",
+		technologies: [
+			"Next.js",
+			"TypeScript",
+			"PostgreSQL",
+			"Supabase",
+			"Redis",
+			"D3.js",
+		],
+		github: "",
+	},
+	{
+		title: "CXR Disease Localization",
+		period: "Fall 2025",
+		metric: "+3–8 AP over benchmarks",
+		summary:
+			"Adapted a transformer-based object detector (DINO, ResNet-50 backbone) to localize tuberculosis lesions in chest X-rays on the TBX11K dataset. Loss reweighting, multi-scale training, and hyperparameter tuning on A100 GPUs yielded 3–8 point AP gains across active, latent, and agnostic TB categories.",
+		technologies: ["Python", "PyTorch", "DINO", "CUDA"],
+		github: "",
 	},
 	{
 		title: "LLM-Assisted FMEA in SMT",
-		image: llm,
-		description: "Built a Retrieval-Augmented Generation (RAG) pipeline using Gemini 2.0 Flash and real semiconductor manufacturing (Surface Mount Technology, SMT) data to auto-generate Failure Mode and Effects Analysis (FMEA) tables, achieving 0.78–0.93 semantic similarity and 90%+ field coverage, exceeding GPT-4 academic benchmarks, and reducing manual effort by 80%+. Integrated dense retrieval (bge-small-en embeddings) with BM25 hybrid search to ground LLM outputs in IPC/JEDEC standards, boosting BLEU/ROUGE scores by 15–20% vs baseline LLMs and enabling production-ready FMEA generation with context attribution and minimal expert edits.",
-		technologies: ["Python", "Langchain", "HuggingFace", "ChromaDB"],
-	},
-	// {
-	// 	title: "RepoMatcher",
-	// 	image: null,
-	// 	description: "Architected a knowledge graph-enhanced recommendation system for GitHub repositories, integrating TransE/ RotatE embeddings with neural collaborative filtering to deliver explainable, diverse suggestions; achieved HR@10 of 34%, NDCG@10 of 21%, and MRR of 26%, on par with leading KG recommender benchmarks. Designed and implemented a scalable end-to-end pipeline in PyTorch and PyKEEN, processing 41+ GitHub metadata features (GHTorrent) into relational triples and training a KG-augmented model that outperformed traditional collaborative filtering baselines by over 20% in top-10 ranking accuracy.",
-	// 	technologies: ["Python", "Google BigQuery"],
-	// },
-	{
-		title: "cmd Play",
-		image: cmdPlay,
-		description: "Engineered and deployed a gamified educational platform within 24 hours to enhance middle-schoolers' understanding of basic programming, cybersecurity and SQL; awarded 1st place at Innovation Hacks'25. Scaled game logic and difficulty dynamically using custom state machines and AI-driven content generation (via Gemini); optimized cross-browser UX with <1s load time and implemented port-based parallel game hosting.",
-		technologies: ["ReactJS", "Vite", "TypeScript", "Shell"],
-	},
-	{
-		title: "Knowledge Graph Generator",
-		image: knowledgeGraphGenerator,
-		description:
-			"Developed a tool that extracts and visualizes relationships from articles, newspapers, and research papers using Google Generative AI and NetworkX, enhancing text comprehension through interactive graphs. Built a web application and browser extension, enabling users to generate and download knowledge graphs directly from webpages for seamless real-time analysis.",
-		technologies: ["Streamlit", "Flask", "JavaScript"],
-	},
-	{
-		title: "SEO Rank Tracker",
-		image: seoRankTrackerImage,
-		description:
-			"A web app that enabled users to monitor Google search rankings for domains and keywords using SerpAPI, with interactive graphs displaying rank trends over time, enhancing SEO performance tracking. Implemented Google Auth for secure access and automated rank updates with a weekly cron job ensuring consistent and up-to-date insights with minimal manual effort.",
-		technologies: ["NextJS", "MongoDB", "TailwindCSS"],
-	},
-	{
-		title: "Tic Tac Toe",
-		image: ticTacToe,
-		description: "Implemented a Tic-Tac-Toe AI using the Minimax algorithm with alpha-beta pruning, achieving efficient decision-making and enhanced user engagement with adaptable difficulty levels (Easy, Medium, Hard). Developed a real-time multiplayer mode utilizing Bluetooth connectivity with JSON-based state synchronization, ensuring low-latency gameplay and robust connection management for a competitive experience.",
-		technologies: ["Kotlin", "Python", "Jetpack Compose", "RealmDB"],
-	},
-	{
-		title: "EinthovenPulse",
-		image: einthovenPulseImage,
-		description:
-			"Developed a context-aware app to monitor heart rate through video analysis (CameraX), respiratory rate via accelerometer data, and symptom severity, facilitating real-time health tracking within 45 seconds. Optimized app functionality with coroutines for asynchronous processing, boosting UI responsiveness and reducing risk of ANRs by keeping main thread unblocked. Implemented back handling and dynamic runtime permission requests, enhancing user trust and engagement by requesting permissions contextually.",
-		technologies: ["Kotlin", "Jetpack Compose", "RoomDB"],
+		period: "Spring 2025",
+		metric: "0.78–0.93 similarity · 80% less effort",
+		summary:
+			"A RAG pipeline over semiconductor (SMT) manufacturing data that auto-generates FMEA quality-control tables. Hybrid retrieval (BM25 + bge-small-en embeddings) grounds outputs in IPC/JEDEC standards, lifting BLEU/ROUGE 15–20% over baseline LLMs with full context attribution.",
+		technologies: [
+			"Python",
+			"LangChain",
+			"HuggingFace",
+			"ChromaDB",
+			"BM25",
+		],
+		github: "",
 	},
 ];
+
+// "Also built" — lighter, shippable side projects shown in a compact strip
+// below the featured grid. Each has real live/published links. `accolade` (optional)
+// renders as a highlighted badge; `links` may hold live / github / store.
+export const SIDE_PROJECTS = [
+	{
+		name: "cmd Play",
+		accolade: "1st place · Innovation Hacks '25 (ASU)",
+		blurb: "A gamified platform teaching middle-schoolers programming, cybersecurity, and SQL — built in 24 hours.",
+		tags: ["React", "Vite", "TypeScript"],
+		links: { live: "https://cmd-play-fo13.vercel.app/" },
+	},
+	{
+		name: "Palmap",
+		blurb: "An interactive memory map — pin photos and stories on a world map, with real-time collaborative editing and shareable public views.",
+		tags: ["React", "Firebase", "MapLibre"],
+		links: { live: "https://palmap.netlify.app" },
+	},
+	{
+		name: "AuthRecall",
+		blurb: "A Chrome extension that remembers which Google account you used to sign in on each site. Published on the Chrome Web Store.",
+		tags: ["Chrome Extension", "JavaScript"],
+		links: {
+			github: "https://github.com/SwayamMehta10/AuthRecall",
+			store: "https://chromewebstore.google.com/detail/gelhlmfcildaoallccooccadnmahfbnd?utm_source=item-share-cb",
+		},
+	},
+	{
+		name: "MockAdBlock",
+		blurb: "A playful Chrome extension that replaces ads with jokes and GIFs across five snark modes.",
+		tags: ["Chrome Extension", "JavaScript"],
+		links: { github: "https://github.com/SwayamMehta10/MockAdBlock" },
+	},
+];
+
+// Skills grouped by category to reflect the real stack (not frontend-heavy).
+// `icon` is a react-icons key resolved in Skills.jsx.
+export const SKILL_GROUPS = [
+	{
+		label: "Languages",
+		items: [
+			{ name: "Python", icon: "python" },
+			{ name: "TypeScript", icon: "typescript" },
+			{ name: "JavaScript", icon: "javascript" },
+			{ name: "Java", icon: "java" },
+			{ name: "SQL", icon: "sql" },
+			{ name: "C++", icon: "cpp" },
+		],
+	},
+	{
+		label: "AI / ML",
+		items: [
+			{ name: "PyTorch", icon: "pytorch" },
+			{ name: "LangGraph", icon: "langgraph" },
+			{ name: "LangChain", icon: "langchain" },
+			{ name: "Transformers", icon: "huggingface" },
+			{ name: "vLLM", icon: "ai" },
+			{ name: "RAG", icon: "rag" },
+		],
+	},
+	{
+		label: "Data & Infra",
+		items: [
+			{ name: "PostgreSQL", icon: "postgres" },
+			{ name: "Neo4j", icon: "neo4j" },
+			{ name: "Redis", icon: "redis" },
+			{ name: "Kubernetes", icon: "kubernetes" },
+			{ name: "Docker", icon: "docker" },
+			{ name: "AWS", icon: "aws" },
+		],
+	},
+	{
+		label: "Web & Tools",
+		items: [
+			{ name: "FastAPI", icon: "fastapi" },
+			{ name: "Next.js", icon: "nextjs" },
+			{ name: "React", icon: "react" },
+			{ name: "Flask", icon: "flask" },
+			{ name: "Git", icon: "git" },
+			{ name: "Linux", icon: "linux" },
+		],
+	},
+];
+
+export const SOCIALS = [
+	{
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/in/swayammehta10/",
+		icon: "linkedin",
+	},
+	{
+		label: "GitHub",
+		href: "https://github.com/SwayamMehta10",
+		icon: "github",
+	},
+	{
+		label: "Instagram",
+		href: "https://www.instagram.com/swayam_mehta_/",
+		icon: "instagram",
+	},
+	{ label: "X (Twitter)", href: "https://x.com/haveYouMetSam_", icon: "x" },
+];
+
+export const CONTACT = {
+	email: "swayam10.mht@gmail.com",
+	web3formsKey: import.meta.env.VITE_WEB3FORMS_KEY,
+};

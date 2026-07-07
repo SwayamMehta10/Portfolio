@@ -1,9 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    font-family: "Inter", sans-serif;
+    /* Accent palette — swap these two lines to change the whole theme.
+       Emerald (active): 52 211 153 / 16 185 129
+       Cyan:             56 189 248 / 14 116 144 */
+    --accent: 52 211 153;
+    --accent-soft: 16 185 129;
+
+    font-family: "Inter", system-ui, sans-serif;
+    color-scheme: dark;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0b;
+}
+
+/* Subtle mono label used across section headers */
+.eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
 }
