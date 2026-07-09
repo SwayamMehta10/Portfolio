@@ -3,7 +3,7 @@
 Personal portfolio site. Single-page, dark, minimal — built to present software and
 AI/ML engineering work with clarity.
 
-**Live:** https://swayam-mehta-portfolio.vercel.app/
+**Live:** https://swayammehta.me/
 
 ## Stack
 

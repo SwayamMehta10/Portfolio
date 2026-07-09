@@ -20,7 +20,7 @@ import {
 	SiAmazon,
 } from "react-icons/si";
 import { FaJava, FaBrain, FaDatabase } from "react-icons/fa6";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaCircleNodes, FaXTwitter } from "react-icons/fa6";
 import { TbSql } from "react-icons/tb";
 import { RiReactjsLine } from "react-icons/ri";
@@ -57,7 +57,6 @@ export const ICONS = {
 	// socials
 	linkedin: FaLinkedin,
 	github: FaGithub,
-	instagram: FaInstagram,
 	x: FaXTwitter,
 };
 

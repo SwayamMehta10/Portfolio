@@ -3,15 +3,15 @@ export const HERO = {
 	roles: ["Software Engineer", "AI/ML Engineer"],
 	tagline: "I build software systems, and the AI that runs inside them.",
 	bio: 'I work across the stack — resilient backends, real-time pipelines, and applied ML — most recently as an ML Engineer at JobTalk AI, with earlier work at Hewlett Packard Enterprise. I like the part where a system goes from "working in theory" to actually holding up under real traffic and real edge cases, that\'s usually where I end up spending my nights. Currently on OPT and open to full-time Software and AI/ML Engineering roles.',
-	resumeHref: "/Swayam_Mehta_SWE_Resume.pdf",
-	altResumeHref: "/Swayam_Mehta_AI-ML_Resume.pdf",
+	resumeHref: "/Swayam Mehta_SWE_Resume.pdf",
+	altResumeHref: "/Swayam Mehta_MLE_Resume.pdf",
 	location: "United States · Open to relocation",
 };
 
 export const EXPERIENCE = [
 	{
 		year: "Mar 2026 — May 2026",
-		role: "Machine Learning Engineer Intern",
+		role: "Machine Learning Engineering Intern",
 		company: "JobTalk AI",
 		points: [
 			"Built an async multi-format resume ingestion service (FastAPI, Celery, MinIO/S3) with a 3-tier parallel extraction pipeline, AES-128 PII-at-rest encryption, and row-level tenant isolation for a multi-client SaaS deployment.",
@@ -236,12 +236,11 @@ export const SOCIALS = [
 		href: "https://github.com/SwayamMehta10",
 		icon: "github",
 	},
-	{
-		label: "Instagram",
-		href: "https://www.instagram.com/swayam_mehta_/",
-		icon: "instagram",
+	{ 	
+		label: "X (Twitter)", 
+		href: "https://x.com/haveYouMetSam_", 
+		icon: "x"
 	},
-	{ label: "X (Twitter)", href: "https://x.com/haveYouMetSam_", icon: "x" },
 ];
 
 export const CONTACT = {
